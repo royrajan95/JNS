@@ -150,7 +150,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit('This Movie Not Found In DataBase  😑 ')
+            k = await query.message.edit('This Movie Not Found In DataBase😕, Please check the movie is released in OTT, if yes contact @movieslandadmin_bot to add the movie to DataBase. ')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -386,7 +386,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 )
                 await query.answer('𝖢𝗁𝖾𝖼𝗄 𝗆𝗒 𝗉𝗆 🤠 , I have sent you 😉', show_alert=True)
         except UserIsBlocked:
-            await query.answer('Unblock the bot mahn ! 😞 ', show_alert=True)
+            await query.answer('Can't help coz you Blocked me.. plz Unblock the bot mahn ! 😞 ', show_alert=True)
         except PeerIdInvalid:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
@@ -430,7 +430,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             msg = await client.send_cached_media(
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
-                caption=f'<b>Hai 👋 {query.from_user.mention} \n☵☵☵☵☵☵☵☵☵☵☵☵☵\n⚡ Powered by : {query.message.chat.title}\n☵☵☵☵☵☵☵☵☵☵☵☵☵</b>\n\n [ @JNS_BOTS ] <code> {title}</code>\n\n⚠️ This file will be deleted in 5 minute as it has copyright ... !!!\n\n Download only After moving from here to saved message or somewhere else..!!!\n\n♻️ 𝗝𝗢𝗜𝗡 : <b>@jns_movie_bot_request </b>',
+                caption=f'<b>Hai 👋 {query.from_user.mention} \n☵☵☵☵☵☵☵☵☵☵☵☵☵\n⚡ Powered by : {query.message.chat.title}\n☵☵☵☵☵☵☵☵☵☵☵☵☵</b>\n\n <code> {title}</code>\n\n⚠️ This file will be deleted in 5 minute as it has copyright ... !!!\n\n Download only After moving from here to saved message or somewhere else..!!!\n\n <b>[🤝Join US](https://t.me/MoviesLandFamily)|[♻️INVITE♻️](https://api.whatsapp.com/send?text=കാണാൻ%20ആഗ്രഹമുള്ള%20ഏതു%20സിനിമയും%20ഏതു%20നേരത്തും%20ചോദിക്കാം%20-%20https://t.me/movieslandfamily/)</b>,',
                 protect_content=True if ident == "filep" else False 
             )
             msg1 = await query.message.reply(
@@ -461,7 +461,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😠 ", show_alert=True)
+            await query.answer("Please Join the Channel by clicking above button & try again 🙄", show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
@@ -510,7 +510,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')
                 ],[
-                    InlineKeyboardButton('🔥Cinema Tharavadu🔥', url=f'http://t.me/cinema_tharavadu')
+                    InlineKeyboardButton('MOVIES LAND', url=f'http://t.me/MoviesLandFamily')
                 ],[
                     InlineKeyboardButton('🎈ᴀʙᴏᴜᴛ', callback_data='about'),
                     InlineKeyboardButton('ᴄʟᴏsᴇ🧨', callback_data='close')
@@ -1001,7 +1001,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'filenos':
         await query.answer("=>I have only this much files 😰 \n To get more results do request as per tips 👉🏻 ", True)
     elif query.data == 'inform':
-        await query.answer("⚠︎ Information ⚠︎\n\nAfter 3 minutes this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page\n\nⒸ JNS MOVIES", True)
+        await query.answer("⚠︎ Information ⚠︎\n\nAfter 3 minutes this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page\n\n @MLDBase", True)
     try: await query.answer('Piracy Is Crime') 
     except: pass
 
@@ -1195,7 +1195,7 @@ async def advantage_spell_chok(msg):
     zz1 = await zz.edit("Did you mean any one of these?  🤓",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(15)
-    zz2 = await zz1.edit('check Whether it is released or not in OTT 👺')
+    zz2 = await zz1.edit('check Whether it is released or not in OTT, if yes, contact @movieslandadmin_bot to add the movie in DataBase👨🏻‍💻')
     
     await asyncio.sleep(3)
     await zz2.delete()
