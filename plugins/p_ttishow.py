@@ -22,7 +22,7 @@ async def save_group(bot, message):
         if message.chat.id in temp.BANNED_CHATS:
             # Inspired from a boat of a banana tree
             buttons = [[
-                InlineKeyboardButton('🎎 sᴜᴘᴘᴏʀᴛ', url=f'https://t.me/cinema_tharavadu')
+                InlineKeyboardButton('🎎 sᴜᴘᴘᴏʀᴛ', url=f'https://t.me/MoviesLandFamily')
             ]]
             reply_markup=InlineKeyboardMarkup(buttons)
             k = await message.reply(
@@ -66,7 +66,7 @@ async def leave_a_chat(bot, message):
         chat = chat
     try:
         buttons = [[
-            InlineKeyboardButton('🎎 sᴜᴘᴘᴏʀᴛ', url=f'https://t.me/cinema_tharavadu')
+            InlineKeyboardButton('🎎 sᴜᴘᴘᴏʀᴛ', url=f'https://t.me/MoviesLandFamily')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
@@ -105,7 +105,7 @@ async def disable_chat(bot, message):
     await message.reply('Chat Successfully Disabled')
     try:
         buttons = [[
-            InlineKeyboardButton('🎎 sᴜᴘᴘᴏʀᴛ', url=f'https://t.me/cinema_tharavadu')
+            InlineKeyboardButton('🎎 sᴜᴘᴘᴏʀᴛ', url=f'https://t.me/MoviesLandFamily')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
